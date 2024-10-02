@@ -44,6 +44,12 @@ class Comment
     #[ORM\JoinColumn(nullable: false)]
     private ?user $comment = null;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?user $userId = null;
+
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?media $mediaId = null;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
