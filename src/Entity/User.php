@@ -35,18 +35,27 @@ class User
     /**
      * @var Collection<int, Comment>
      */
+<<<<<<< HEAD
     #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'publisher')]
+=======
+    #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'comment')]
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
     private Collection $comments;
 
     /**
      * @var Collection<int, SubscriptionHistory>
      */
+<<<<<<< HEAD
     #[ORM\OneToMany(targetEntity: SubscriptionHistory::class, mappedBy: 'subscriber')]
+=======
+    #[ORM\OneToMany(targetEntity: SubscriptionHistory::class, mappedBy: 'userId')]
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
     private Collection $subscriptionHistories;
 
     /**
      * @var Collection<int, PlaylistSubscription>
      */
+<<<<<<< HEAD
     #[ORM\OneToMany(targetEntity: PlaylistSubscription::class, mappedBy: 'subscriber')]
     private Collection $playlistSubscriptions;
 
@@ -60,6 +69,15 @@ class User
      * @var Collection<int, WatchHistory>
      */
     #[ORM\OneToMany(targetEntity: WatchHistory::class, mappedBy: 'watcher')]
+=======
+    #[ORM\OneToMany(targetEntity: PlaylistSubscription::class, mappedBy: 'userId')]
+    private Collection $playlistSubscriptions;
+
+    /**
+     * @var Collection<int, WatchHistory>
+     */
+    #[ORM\OneToMany(targetEntity: WatchHistory::class, mappedBy: 'userId')]
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
     private Collection $watchHistories;
 
     public function __construct()
@@ -67,7 +85,10 @@ class User
         $this->comments = new ArrayCollection();
         $this->subscriptionHistories = new ArrayCollection();
         $this->playlistSubscriptions = new ArrayCollection();
+<<<<<<< HEAD
         $this->playlists = new ArrayCollection();
+=======
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
         $this->watchHistories = new ArrayCollection();
     }
 
@@ -148,7 +169,11 @@ class User
     {
         if (!$this->comments->contains($comment)) {
             $this->comments->add($comment);
+<<<<<<< HEAD
             $comment->setPublisher($this);
+=======
+            $comment->setComment($this);
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
         }
 
         return $this;
@@ -158,8 +183,13 @@ class User
     {
         if ($this->comments->removeElement($comment)) {
             // set the owning side to null (unless already changed)
+<<<<<<< HEAD
             if ($comment->getPublisher() === $this) {
                 $comment->setPublisher(null);
+=======
+            if ($comment->getComment() === $this) {
+                $comment->setComment(null);
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
             }
         }
 
@@ -178,7 +208,11 @@ class User
     {
         if (!$this->subscriptionHistories->contains($subscriptionHistory)) {
             $this->subscriptionHistories->add($subscriptionHistory);
+<<<<<<< HEAD
             $subscriptionHistory->setSubscriber($this);
+=======
+            $subscriptionHistory->setUserId($this);
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
         }
 
         return $this;
@@ -188,8 +222,13 @@ class User
     {
         if ($this->subscriptionHistories->removeElement($subscriptionHistory)) {
             // set the owning side to null (unless already changed)
+<<<<<<< HEAD
             if ($subscriptionHistory->getSubscriber() === $this) {
                 $subscriptionHistory->setSubscriber(null);
+=======
+            if ($subscriptionHistory->getUserId() === $this) {
+                $subscriptionHistory->setUserId(null);
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
             }
         }
 
@@ -208,7 +247,11 @@ class User
     {
         if (!$this->playlistSubscriptions->contains($playlistSubscription)) {
             $this->playlistSubscriptions->add($playlistSubscription);
+<<<<<<< HEAD
             $playlistSubscription->setSubscriber($this);
+=======
+            $playlistSubscription->setUserId($this);
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
         }
 
         return $this;
@@ -218,6 +261,7 @@ class User
     {
         if ($this->playlistSubscriptions->removeElement($playlistSubscription)) {
             // set the owning side to null (unless already changed)
+<<<<<<< HEAD
             if ($playlistSubscription->getSubscriber() === $this) {
                 $playlistSubscription->setSubscriber(null);
             }
@@ -250,6 +294,10 @@ class User
             // set the owning side to null (unless already changed)
             if ($playlist->getCreator() === $this) {
                 $playlist->setCreator(null);
+=======
+            if ($playlistSubscription->getUserId() === $this) {
+                $playlistSubscription->setUserId(null);
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
             }
         }
 
@@ -268,7 +316,11 @@ class User
     {
         if (!$this->watchHistories->contains($watchHistory)) {
             $this->watchHistories->add($watchHistory);
+<<<<<<< HEAD
             $watchHistory->setWatcher($this);
+=======
+            $watchHistory->setUserId($this);
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
         }
 
         return $this;
@@ -278,8 +330,13 @@ class User
     {
         if ($this->watchHistories->removeElement($watchHistory)) {
             // set the owning side to null (unless already changed)
+<<<<<<< HEAD
             if ($watchHistory->getWatcher() === $this) {
                 $watchHistory->setWatcher(null);
+=======
+            if ($watchHistory->getUserId() === $this) {
+                $watchHistory->setUserId(null);
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
             }
         }
 

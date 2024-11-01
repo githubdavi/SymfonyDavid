@@ -3,8 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\SeasonRepository;
+<<<<<<< HEAD
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+=======
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: SeasonRepository::class)]
@@ -15,6 +18,7 @@ class Season
     #[ORM\Column]
     private ?int $id = null;
 
+<<<<<<< HEAD
     #[ORM\Column(length: 255)]
     private ?string $number = null;
 
@@ -32,12 +36,20 @@ class Season
     {
         $this->episodes = new ArrayCollection();
     }
+=======
+    #[ORM\Column]
+    private ?int $seassonNumber = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $episode = null;
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
+<<<<<<< HEAD
     public function getNumber(): ?string
     {
         return $this->number;
@@ -46,10 +58,21 @@ class Season
     public function setNumber(string $number): static
     {
         $this->number = $number;
+=======
+    public function getSeassonNumber(): ?int
+    {
+        return $this->seassonNumber;
+    }
+
+    public function setSeassonNumber(int $seassonNumber): static
+    {
+        $this->seassonNumber = $seassonNumber;
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
 
         return $this;
     }
 
+<<<<<<< HEAD
     /**
      * @return Collection<int, Episode>
      */
@@ -88,6 +111,16 @@ class Season
     public function setSerie(?Serie $serie): static
     {
         $this->serie = $serie;
+=======
+    public function getEpisode(): ?string
+    {
+        return $this->episode;
+    }
+
+    public function setEpisode(string $episode): static
+    {
+        $this->episode = $episode;
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
 
         return $this;
     }

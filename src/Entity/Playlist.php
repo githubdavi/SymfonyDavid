@@ -27,6 +27,7 @@ class Playlist
     /**
      * @var Collection<int, PlaylistSubscription>
      */
+<<<<<<< HEAD
     #[ORM\OneToMany(targetEntity: PlaylistSubscription::class, mappedBy: 'playlist')]
     private Collection $playlistSubscriptions;
 
@@ -44,6 +45,14 @@ class Playlist
     {
         $this->playlistSubscriptions = new ArrayCollection();
         $this->playlistMedia = new ArrayCollection();
+=======
+    #[ORM\ManyToMany(targetEntity: PlaylistSubscription::class, mappedBy: 'playlistId')]
+    private Collection $playlistSubscriptions;
+
+    public function __construct()
+    {
+        $this->playlistSubscriptions = new ArrayCollection();
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
     }
 
     public function getId(): ?int
@@ -99,7 +108,11 @@ class Playlist
     {
         if (!$this->playlistSubscriptions->contains($playlistSubscription)) {
             $this->playlistSubscriptions->add($playlistSubscription);
+<<<<<<< HEAD
             $playlistSubscription->setPlaylist($this);
+=======
+            $playlistSubscription->addPlaylistId($this);
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
         }
 
         return $this;
@@ -108,6 +121,7 @@ class Playlist
     public function removePlaylistSubscription(PlaylistSubscription $playlistSubscription): static
     {
         if ($this->playlistSubscriptions->removeElement($playlistSubscription)) {
+<<<<<<< HEAD
             // set the owning side to null (unless already changed)
             if ($playlistSubscription->getPlaylist() === $this) {
                 $playlistSubscription->setPlaylist(null);
@@ -154,6 +168,9 @@ class Playlist
             if ($playlistMedium->getPlaylist() === $this) {
                 $playlistMedium->setPlaylist(null);
             }
+=======
+            $playlistSubscription->removePlaylistId($this);
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
         }
 
         return $this;

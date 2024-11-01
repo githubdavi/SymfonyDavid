@@ -15,14 +15,22 @@ class Subscription
     #[ORM\Column]
     private ?int $id = null;
 
+<<<<<<< HEAD
     #[ORM\Column(length: 255)]
+=======
+    #[ORM\Column(length: 100)]
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
     private ?string $name = null;
 
     #[ORM\Column]
     private ?int $price = null;
 
     #[ORM\Column]
+<<<<<<< HEAD
     private ?int $duration = null;
+=======
+    private ?int $durationMonth = null;
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
 
     /**
      * @var Collection<int, User>
@@ -33,7 +41,11 @@ class Subscription
     /**
      * @var Collection<int, SubscriptionHistory>
      */
+<<<<<<< HEAD
     #[ORM\OneToMany(targetEntity: SubscriptionHistory::class, mappedBy: 'subscription')]
+=======
+    #[ORM\OneToMany(targetEntity: SubscriptionHistory::class, mappedBy: 'subscriptionID')]
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
     private Collection $subscriptionHistories;
 
     public function __construct()
@@ -71,6 +83,7 @@ class Subscription
         return $this;
     }
 
+<<<<<<< HEAD
     public function getDuration(): ?int
     {
         return $this->duration;
@@ -79,6 +92,16 @@ class Subscription
     public function setDuration(int $duration): static
     {
         $this->duration = $duration;
+=======
+    public function getDurationMonth(): ?int
+    {
+        return $this->durationMonth;
+    }
+
+    public function setDurationMonth(int $durationMonth): static
+    {
+        $this->durationMonth = $durationMonth;
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
 
         return $this;
     }
@@ -125,7 +148,11 @@ class Subscription
     {
         if (!$this->subscriptionHistories->contains($subscriptionHistory)) {
             $this->subscriptionHistories->add($subscriptionHistory);
+<<<<<<< HEAD
             $subscriptionHistory->setSubscription($this);
+=======
+            $subscriptionHistory->setSubscriptionID($this);
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
         }
 
         return $this;
@@ -135,8 +162,13 @@ class Subscription
     {
         if ($this->subscriptionHistories->removeElement($subscriptionHistory)) {
             // set the owning side to null (unless already changed)
+<<<<<<< HEAD
             if ($subscriptionHistory->getSubscription() === $this) {
                 $subscriptionHistory->setSubscription(null);
+=======
+            if ($subscriptionHistory->getSubscriptionID() === $this) {
+                $subscriptionHistory->setSubscriptionID(null);
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
             }
         }
 

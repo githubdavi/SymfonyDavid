@@ -16,6 +16,7 @@ class PlaylistMediaRepository extends ServiceEntityRepository
         parent::__construct($registry, PlaylistMedia::class);
     }
 
+<<<<<<< HEAD
     //    /**
     //     * @return PlaylistMedia[] Returns an array of PlaylistMedia objects
     //     */
@@ -40,4 +41,30 @@ class PlaylistMediaRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+=======
+//    /**
+//     * @return PlaylistMedia[] Returns an array of PlaylistMedia objects
+//     */
+//    public function findByExampleField($value): array
+//    {
+//        return $this->createQueryBuilder('p')
+//            ->andWhere('p.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->orderBy('p.id', 'ASC')
+//            ->setMaxResults(10)
+//            ->getQuery()
+//            ->getResult()
+//        ;
+//    }
+
+//    public function findOneBySomeField($value): ?PlaylistMedia
+//    {
+//        return $this->createQueryBuilder('p')
+//            ->andWhere('p.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->getQuery()
+//            ->getOneOrNullResult()
+//        ;
+//    }
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
 }

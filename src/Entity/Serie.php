@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+<<<<<<< HEAD
 
 namespace App\Entity;
 
@@ -55,3 +56,11 @@ class Serie extends Media
         return $this;
     }
 }
+=======
+namespace App\Entity;
+
+class Serie extends Media  
+{
+
+}
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778

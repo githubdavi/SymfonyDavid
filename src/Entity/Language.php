@@ -15,6 +15,7 @@ class Language
     #[ORM\Column]
     private ?int $id = null;
 
+<<<<<<< HEAD
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
@@ -30,6 +31,23 @@ class Language
     public function __construct()
     {
         $this->medias = new ArrayCollection();
+=======
+    #[ORM\Column(length: 100)]
+    private ?string $name = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $code = null;
+
+    /**
+     * @var Collection<int, media>
+     */
+    #[ORM\ManyToMany(targetEntity: media::class, inversedBy: 'languages')]
+    private Collection $idLanguage;
+
+    public function __construct()
+    {
+        $this->idLanguage = new ArrayCollection();
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
     }
 
     public function getId(): ?int
@@ -37,6 +55,7 @@ class Language
         return $this->id;
     }
 
+<<<<<<< HEAD
     public function getNom(): ?string
     {
         return $this->nom;
@@ -45,6 +64,16 @@ class Language
     public function setNom(string $nom): static
     {
         $this->nom = $nom;
+=======
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): static
+    {
+        $this->name = $name;
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
 
         return $this;
     }
@@ -62,6 +91,7 @@ class Language
     }
 
     /**
+<<<<<<< HEAD
      * @return Collection<int, Media>
      */
     public function getMedias(): Collection
@@ -74,16 +104,35 @@ class Language
         if (!$this->medias->contains($media)) {
             $this->medias->add($media);
             $media->addLanguage($this);
+=======
+     * @return Collection<int, media>
+     */
+    public function getIdLanguage(): Collection
+    {
+        return $this->idLanguage;
+    }
+
+    public function addIdLanguage(media $idLanguage): static
+    {
+        if (!$this->idLanguage->contains($idLanguage)) {
+            $this->idLanguage->add($idLanguage);
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
         }
 
         return $this;
     }
 
+<<<<<<< HEAD
     public function removeMedia(Media $media): static
     {
         if ($this->medias->removeElement($media)) {
             $media->removeLanguage($this);
         }
+=======
+    public function removeIdLanguage(media $idLanguage): static
+    {
+        $this->idLanguage->removeElement($idLanguage);
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
 
         return $this;
     }

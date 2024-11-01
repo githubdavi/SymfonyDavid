@@ -16,6 +16,7 @@ class PlaylistSubscriptionRepository extends ServiceEntityRepository
         parent::__construct($registry, PlaylistSubscription::class);
     }
 
+<<<<<<< HEAD
     //    /**
     //     * @return PlaylistSubscription[] Returns an array of PlaylistSubscription objects
     //     */
@@ -40,4 +41,30 @@ class PlaylistSubscriptionRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+=======
+//    /**
+//     * @return PlaylistSubscription[] Returns an array of PlaylistSubscription objects
+//     */
+//    public function findByExampleField($value): array
+//    {
+//        return $this->createQueryBuilder('p')
+//            ->andWhere('p.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->orderBy('p.id', 'ASC')
+//            ->setMaxResults(10)
+//            ->getQuery()
+//            ->getResult()
+//        ;
+//    }
+
+//    public function findOneBySomeField($value): ?PlaylistSubscription
+//    {
+//        return $this->createQueryBuilder('p')
+//            ->andWhere('p.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->getQuery()
+//            ->getOneOrNullResult()
+//        ;
+//    }
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
 }

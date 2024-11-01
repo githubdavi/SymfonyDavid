@@ -16,6 +16,7 @@ class SubscriptionHistoryRepository extends ServiceEntityRepository
         parent::__construct($registry, SubscriptionHistory::class);
     }
 
+<<<<<<< HEAD
     //    /**
     //     * @return SubscriptionHistory[] Returns an array of SubscriptionHistory objects
     //     */
@@ -40,4 +41,30 @@ class SubscriptionHistoryRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+=======
+//    /**
+//     * @return SubscriptionHistory[] Returns an array of SubscriptionHistory objects
+//     */
+//    public function findByExampleField($value): array
+//    {
+//        return $this->createQueryBuilder('s')
+//            ->andWhere('s.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->orderBy('s.id', 'ASC')
+//            ->setMaxResults(10)
+//            ->getQuery()
+//            ->getResult()
+//        ;
+//    }
+
+//    public function findOneBySomeField($value): ?SubscriptionHistory
+//    {
+//        return $this->createQueryBuilder('s')
+//            ->andWhere('s.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->getQuery()
+//            ->getOneOrNullResult()
+//        ;
+//    }
+>>>>>>> a52e1e2a17f6414666b4fc16cfd652e69e853778
 }
